@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>컬리칵테일 - 조주기능사 실기 전문 학원</title>
     <style>
-        /* 4가지 핵심 색상 팔레트 사용 */
         :root {
-            --primary-purple: #5F0080; /* 메인 브랜드 컬러 */
-            --light-purple: #F4EBFB;   /* 포인트 배경/하이라이트 */
-            --text-dark: #333333;      /* 기본 텍스트 색상 */
-            --bg-gray: #F9F9F9;        /* 전체 배경 색상 */
+            --primary-purple: #5F0080;
+            --light-purple: #F4EBFB;
+            --text-dark: #333333;
+            --bg-gray: #F9F9F9;
         }
 
         * {
@@ -37,15 +36,17 @@
         }
 
         .header-container {
-            width: 1050px;
+            width: 100%;
+            max-width: 1050px;
             margin: 0 auto;
+            padding: 0 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: bold;
             color: var(--primary-purple);
             text-decoration: none;
@@ -53,14 +54,14 @@
 
         .header-contact {
             display: flex;
-            gap: 15px;
+            gap: 10px;
         }
 
         .header-contact a {
             text-decoration: none;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 500;
-            padding: 8px 14px;
+            padding: 6px 10px;
             border-radius: 4px;
             border: 1px solid var(--primary-purple);
             color: var(--primary-purple);
@@ -71,10 +72,10 @@
             background-color: var(--light-purple);
         }
 
-        /* 메인 배너 (클릭 가능 영역) */
+        /* 메인 배너 */
         .main-banner {
             width: 100%;
-            height: 360px;
+            height: 320px;
             background: linear-gradient(135deg, #5F0080 0%, #8022A3 100%);
             color: white;
             display: flex;
@@ -83,54 +84,53 @@
             align-items: center;
             text-align: center;
             cursor: pointer;
-            transition: opacity 0.2s;
             padding: 0 20px;
-        }
-
-        .main-banner:hover {
-            opacity: 0.95;
         }
 
         .main-banner span.badge {
             background-color: rgba(255, 255, 255, 0.2);
             padding: 6px 12px;
             border-radius: 20px;
-            font-size: 13px;
+            font-size: 12px;
             margin-bottom: 15px;
             font-weight: 500;
         }
 
         .main-banner h1 {
-            font-size: 36px;
+            font-size: 26px;
             margin-bottom: 10px;
             font-weight: 700;
+            word-break: keep-all;
         }
 
         .main-banner p {
-            font-size: 18px;
+            font-size: 15px;
             margin-bottom: 20px;
             opacity: 0.9;
+            word-break: keep-all;
         }
 
         .banner-btn {
             background-color: #ffffff;
             color: var(--primary-purple);
-            padding: 12px 28px;
+            padding: 10px 22px;
             border-radius: 6px;
             font-weight: bold;
-            font-size: 16px;
+            font-size: 14px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
         /* 콘텐츠 레이아웃 */
         .content {
-            width: 1050px;
-            margin: 50px auto;
+            width: 100%;
+            max-width: 1050px;
+            margin: 30px auto;
+            padding: 0 20px;
         }
 
         .section-title {
-            font-size: 24px;
-            margin-bottom: 10px;
+            font-size: 22px;
+            margin-bottom: 8px;
             text-align: center;
             font-weight: 700;
         }
@@ -138,39 +138,33 @@
         .section-subtitle {
             text-align: center;
             color: #666;
-            margin-bottom: 35px;
-            font-size: 15px;
+            margin-bottom: 25px;
+            font-size: 14px;
         }
 
-        /* 커리큘럼 카드 Grid */
+        /* 커리큘럼 카드 Grid (기본 4열) */
         .grid-4 {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            gap: 15px;
         }
 
         .card {
             background: white;
             border-radius: 8px;
-            padding: 25px 20px;
+            padding: 20px 15px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.04);
             border: 1px solid #eee;
-            transition: transform 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary-purple);
         }
 
         .card h3 {
-            font-size: 18px;
-            margin-bottom: 12px;
+            font-size: 16px;
+            margin-bottom: 10px;
             color: var(--primary-purple);
         }
 
         .card p {
-            font-size: 14px;
+            font-size: 13px;
             color: #666;
         }
 
@@ -178,30 +172,38 @@
         .consult-section {
             background-color: var(--light-purple);
             border-radius: 12px;
-            padding: 40px;
+            padding: 30px 20px;
             text-align: center;
-            margin-top: 60px;
+            margin-top: 40px;
         }
 
         .consult-section h2 {
-            font-size: 22px;
-            margin-bottom: 15px;
+            font-size: 18px;
+            margin-bottom: 10px;
             color: var(--primary-purple);
+            word-break: keep-all;
+        }
+
+        .consult-section p {
+            font-size: 14px;
+            color: #555;
+            word-break: keep-all;
         }
 
         .consult-buttons {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 10px;
             margin-top: 20px;
+            flex-wrap: wrap;
         }
 
         .btn-kakao, .btn-naver {
-            padding: 12px 24px;
+            padding: 10px 20px;
             border-radius: 6px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 15px;
+            font-size: 14px;
         }
 
         .btn-kakao {
@@ -218,11 +220,31 @@
         footer {
             background-color: #ffffff;
             border-top: 1px solid #eee;
-            padding: 30px 0;
-            margin-top: 60px;
+            padding: 25px 0;
+            margin-top: 40px;
             text-align: center;
             color: #888;
-            font-size: 13px;
+            font-size: 12px;
+        }
+
+        /* 모바일 화면 대응 (화면 너비가 768px 이하일 때) */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 16px;
+            }
+            .header-contact a {
+                font-size: 11px;
+                padding: 5px 8px;
+            }
+            .main-banner h1 {
+                font-size: 22px;
+            }
+            .main-banner p {
+                font-size: 13px;
+            }
+            .grid-4 {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -231,62 +253,60 @@
     <!-- 상단 헤더 -->
     <header>
         <div class="header-container">
-            <a href="#" class="logo">KURLY COCKTAIL ACADEMY</a>
+            <a href="#" class="logo">KURLY COCKTAIL</a>
             <div class="header-contact">
-                <!-- 네이버 1:1 채팅 링크 연결 -->
-                <a href="https://open.kakao.com/o/sjbbXpSi/" target="_blank">네이버 1:1 문의</a>
-                <!-- 오픈 카카오톡 링크 연결 -->
-                <a href="https://open.kakao.com/o/sjbbXpSi/" target="_blank">오픈채팅 상담</a>
+                <a href="https://nevent.naver.com/" target="_blank">네이버 1:1</a>
+                <a href="https://open.kakao.com/o/sjbbXpSi" target="_blank">오픈채팅</a>
             </div>
         </div>
     </header>
 
-    <!-- 메인 배너 (클릭 시 오픈카카오톡으로 이동하도록 설정) -->
-    <div class="main-banner" onclick="window.open('https://open.kakao.com/o/sjbbXpSi/', '_blank')">
-        <span class="badge">🔥 2026년 조주기능사 실기 단기완성반 모집</span>
+    <!-- 메인 배너 -->
+    <div class="main-banner" onclick="window.open('https://open.kakao.com/o/sjbbXpSi', '_blank')">
+        <span class="badge">🔥 2026년 조주기능사 실기 단기완성반</span>
         <h1>한 번에 합격하는 칵테일 실기 마스터</h1>
-        <p>기주별 40가지 레시피 완벽 실습 및 실전 시뮬레이션 트레이닝</p>
+        <p>기주별 40가지 레시피 완벽 실습 및 실전 트레이닝</p>
         <div class="banner-btn">지금 바로 1:1 빠른 문의하기</div>
     </div>
 
-    <!-- 커리큘럼 소개 영역 -->
+    <!-- 콘텐츠 영역 -->
     <div class="content">
         <h2 class="section-title">조주기능사 실기 커리큘럼</h2>
-        <p class="section-subtitle">체계적인 4단계 프로세스로 합격률을 극대화합니다.</p>
+        <p class="section-subtitle">체계적인 4단계 프로세스로 합격률 극대화</p>
         
         <div class="grid-4">
             <div class="card">
                 <h3>01. 기초 이론 & 기주 학습</h3>
-                <p>진, 위스키, 브랜디, 럼, 보드카, 데킬라, 와인, 전통주 등 핵심 기주별 특징과 관리법 완벽 정리</p>
+                <p>진, 위스키, 럼, 보드카 등 핵심 기주별 특징과 관리법 완벽 정리</p>
             </div>
             <div class="card">
                 <h3>02. 40가지 레시피 실습</h3>
-                <p>시험에 출제되는 대표적인 40가지 칵테일 제조법을 직접 만들고 맛보며 체득하는 실전 위주 수업</p>
+                <p>시험에 출제되는 대표 칵테일 제조법을 직접 만들고 맛보는 수업</p>
             </div>
             <div class="card">
                 <h3>03. 실기 시험 시뮬레이션</h3>
-                <p>랜덤 출제되는 3가지 칵테일을 제한 시간 내에 완성하는 실전 맞춤형 타임어택 훈련</p>
+                <p>랜덤 출제되는 3가지 칵테일을 제한 시간 내에 완성하는 타임어택</p>
             </div>
             <div class="card">
                 <h3>04. 세팅 및 안전 교육</h3>
-                <p>기주 및 잔 선택, 가니쉬 세팅부터 위생 및 안전사고 예방 교육까지 꼼꼼한 마감 체크</p>
+                <p>기주 및 잔 선택, 가니쉬 세팅부터 위생 및 안전사고 예방까지</p>
             </div>
         </div>
 
-        <!-- 하단 1:1 문의 유도 배너 -->
+        <!-- 하단 문의 섹션 -->
         <div class="consult-section">
-            <h2>수강료, 국비지원 및 시간표가 궁금하신가요?</h2>
+            <h2>수강료 및 시간표가 궁금하신가요?</h2>
             <p>초보자도 따라올 수 있는 맞춤 커리큘럼을 편하게 문의해 주세요.</p>
             <div class="consult-buttons">
-                <a href="https://open.kakao.com/o/sjbbXpSi/" target="_blank" class="btn-kakao">💬 오픈카카오톡 문의</a>
-                <a href="https://open.kakao.com/o/sjbbXpSi/" target="_blank" class="btn-naver">🟢 네이버 1:1 채팅 문의</a>
+                <a href="https://open.kakao.com/o/sjbbXpSi" target="_blank" class="btn-kakao">💬 오픈카카오톡 문의</a>
+                <a href="https://nevent.naver.com/" target="_blank" class="btn-naver">🟢 네이버 1:1 채팅 문의</a>
             </div>
         </div>
     </div>
 
     <!-- 푸터 -->
     <footer>
-        <p>조주기능사 실기 학원 Clone Page | 마켓컬리 스타일 디자인 콘셉트</p>
+        <p>조주기능사 실기 학원 Clone Page | 마켓컬리 스타일</p>
     </footer>
 
 </body>
